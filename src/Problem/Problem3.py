@@ -7,18 +7,22 @@
     @author Shane Auckland <shane.auckland@gmail.com>
     
 """
-import math
+import math 
 
-number = 600851475143
-root = math.sqrt(number)
-# ignore primes 1 and 2
-prime = 3
-largest = prime
+number =int( math.sqrt(600851475143))
+print('Root: %d' % number)
 
-while prime <= root:
-    if prime % number == 0:
-        largest = prime
-    prime += 2
+maxFactor = 1
 
-factor = number / largest    
-print('Result: %d' % factor)
+while number % 2 == 0:
+    maxFactor = 2
+    number = number / 2
+    
+i = 3
+while i < number:
+    while number % i == 0:
+        maxFactor = i
+        number = number / i
+    i += 2
+    
+print('Result: %d' % maxFactor)
