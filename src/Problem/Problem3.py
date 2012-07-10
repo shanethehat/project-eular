@@ -9,20 +9,17 @@
 """
 import math 
 
-number =int( math.sqrt(600851475143))
-print('Root: %d' % number)
+number = 600851475143
 
-maxFactor = 1
+def findPrime(n):
+    root = math.sqrt(n)
+    i = 2
+    while i <= root:
+        if n % i == 0:
+            return findPrime(n/i)
+        i += 1
+    return n
 
-while number % 2 == 0:
-    maxFactor = 2
-    number = number / 2
-    
-i = 3
-while i < number:
-    while number % i == 0:
-        maxFactor = i
-        number = number / i
-    i += 2
+maxFactor = findPrime(number)   
     
 print('Result: %d' % maxFactor)
