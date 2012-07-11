@@ -9,7 +9,7 @@
 """
 import math
 
-def isNotPalindrome(n):
+def isPalindrome(n):
     # convert to a string
     n = str(n)
     length = len(n)
@@ -17,14 +17,12 @@ def isNotPalindrome(n):
     n2 = n[length - split : length]
     # reverse it
     n2 = n2[::-1]
-    return n[0:split] != n2
+    return n[0:split] == n2
 
-a = 999    
-number = a * 999
+for number in range(999*999,100*100,-1): 
+    if isPalindrome(number):
+        break
 
-while isNotPalindrome(number):
-    a -= 1
-    number = a * 999
     
 print('Result: %d' % number)
     

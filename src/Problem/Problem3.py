@@ -12,12 +12,10 @@ import math
 number = 600851475143
 
 def findPrime(n):
-    root = math.sqrt(n)
-    i = 2
-    while i <= root:
+    root = int(math.sqrt(n))
+    for i in range(2,root):
         if n % i == 0:
             return findPrime(n/i)
-        i += 1
     return n
 
 maxFactor = findPrime(number)   
