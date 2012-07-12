@@ -19,9 +19,16 @@ def isPalindrome(n):
     n2 = n2[::-1]
     return n[0:split] == n2
 
+def isProductOfThrees(n):
+    for a in range(999,100,-1):
+        for b in range(999,100,-1):
+            if a * b == n:
+                return n
+
 for number in range(999*999,100*100,-1): 
     if isPalindrome(number):
-        break
+        if isProductOfThrees(number):
+            break
 
     
 print('Result: %d' % number)
