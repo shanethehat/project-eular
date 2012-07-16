@@ -13,7 +13,7 @@ import math
 count = 1;
 
 for a in range(3, 500, 2):
-    b = (count * a) + a
+    b = (count * a) + count
     c = math.sqrt(a**2 + b**2) 
     n = a + b + c
     print("Sum: {}".format(n))
@@ -21,6 +21,6 @@ for a in range(3, 500, 2):
         product = a * b * c
         print("Result: {0} x {1} x {2} = {3}".format(a,b,c,product))
         break;
-           
+    count += 1       
         
     
