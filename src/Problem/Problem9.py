@@ -11,8 +11,10 @@
 import math
 
 count = 1;
+n = 0
+a = 3
 
-for a in range(3, 500, 2):
+while n < 1000:
     b = (count * a) + count
     c = math.sqrt(a**2 + b**2) 
     n = a + b + c
@@ -21,6 +23,7 @@ for a in range(3, 500, 2):
         product = a * b * c
         print("Result: {0} x {1} x {2} = {3}".format(a,b,c,product))
         break;
-    count += 1       
+    count += 1
+    a += 2    
         
     
