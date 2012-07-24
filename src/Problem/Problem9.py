@@ -8,22 +8,18 @@
     @author Shane Auckland <shane.auckland@gmail.com>
     
 """
-import math
 
-count = 1;
-n = 0
-a = 3
+target = 1000
 
-while n < 1000:
-    b = (count * a) + count
-    c = math.sqrt(a**2 + b**2) 
-    n = a + b + c
-    print("Sum: {}".format(n))
-    if 1000 == int(n):
-        product = a * b * c
-        print("Result: {0} x {1} x {2} = {3}".format(a,b,c,product))
-        break;
-    count += 1
-    a += 2    
-        
-    
+for c in range(1, 600):
+    for b in range(1, c):
+        for a in range(1, b):
+            if (a**2 + b**2 == c**2):
+                # we have a triple
+                total = a + b + c
+                print("total: %d" % total)
+                if (total == target):
+                    product = a * b * c
+                    print("result: %d" % product)
+                    break
+                    
