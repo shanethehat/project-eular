@@ -21,5 +21,5 @@ for c in range(1, 600):
                 if (total == target):
                     product = a * b * c
                     print("result: %d" % product)
-                    break
+                    exit()
                     
