@@ -8,7 +8,7 @@
     @author Shane Auckland <shane.auckland@gmail.com>
 """
 
-import math, pprint
+import math
 
 # assumption that all primes are either 6n-1 or 6n+1
 n = 1
@@ -33,6 +33,4 @@ while n*6-1 < 2000000:
     n += 1
     print("next: %d" % n)
 
-#pp = pprint.PrettyPrinter(indent=4)
-#pp.pprint(primes)
 print("result: %d" % sum(primes))
