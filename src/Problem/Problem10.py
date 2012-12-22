@@ -11,17 +11,16 @@
 import math, pprint
 
 # assumption that all primes are either 6n-1 or 6n+1
-n = 2
+n = 1
 
-# start with obvious primes less than 11 (6*2-1)
-primes = [1, 2, 3, 5, 7]
+# start with obvious primes less than 5 (6*-1)
+primes = [2, 3]
 
 def isPrime(num):
     for i in range(3, math.ceil(math.sqrt(num))+1,2):
         if(num % i == 0):
             return False
-    else:
-        return True
+    return True
     
 
 while n*6-1 < 2000000:
@@ -34,6 +33,6 @@ while n*6-1 < 2000000:
     n += 1
     print("next: %d" % n)
 
-pp = pprint.PrettyPrinter(indent=4)
-pp.pprint(primes)
+#pp = pprint.PrettyPrinter(indent=4)
+#pp.pprint(primes)
 print("result: %d" % sum(primes))
