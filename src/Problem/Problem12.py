@@ -21,17 +21,18 @@ nextNumber = 2
 loop = True
 
 def getDivisors(num):
-    divisors = 0
+    divisors = 1
     for n in range(1, math.ceil(num/2)):
         if num % n == 0:
             divisors += 1
     return divisors
 
 while loop:
-    print("current: %d" % number)
     number += nextNumber
     nextNumber += 1
     divisors = getDivisors(number)
+    print("current: %d" % number)
+    print("next: %d" % nextNumber)
     print("divisors: %d" % divisors)
     if divisors > 500:
         loop = False
