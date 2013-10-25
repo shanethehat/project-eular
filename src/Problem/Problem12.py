@@ -1,3 +1,5 @@
+#!/usr/bin/python
+
 """
     Project Eular - Problem 12
     
@@ -13,29 +15,32 @@
     @package Problem
     @author Shane Auckland <shane.auckland@gmail.com>
 """
-
 import math
 
-number = 1
-nextNumber = 2
+count = 3 # ensures that the first calculation is done for 1 + 2
 loop = True
+largest = 2
 
-def getDivisors(num):
-    divisors = 1
-    for n in range(1, math.ceil(num/2)):
-        if num % n == 0:
-            divisors += 1
+def getTriangle(length):
+    return reduce(lambda x,y: x+y, range(1, length))
+
+def findDivisors(num):
+    divisors = 2 # start at two because num is a divisor of itself, and because 1
+    current = 1
+    end = num
+    while (current < end):
+        if (num % current == 0):
+            end = num / current
+            divisors += 2
+        current += 1
     return divisors
 
-while loop:
-    number += nextNumber
-    nextNumber += 1
-    divisors = getDivisors(number)
-    print("current: %d" % number)
-    print("next: %d" % nextNumber)
-    print("divisors: %d" % divisors)
-    if divisors > 500:
+while (loop):
+    triangle = getTriangle(count);
+    divisors = findDivisors(triangle);
+    if (divisors > largest):
+        largest = divisors
+    print "%s : %s : %s : %s\n" %(count, triangle, divisors, largest)
+    if (divisors > 500):
         loop = False
-    
-        
-print("result: %d" % number)
+    count += 1
