@@ -14,9 +14,9 @@
     @author Shane Auckland <shane.auckland@gmail.com>
 """
 
-w=lambda n:_(n,["","thousand "]+p("m b tr quadr quint","illion"))[:-1]or"zero"
-_=lambda n,S:n*"x"and _(n//M,S[1:])+(Z[n%M//C]+"hundred and ")*(n%M//C>0)+(n%C>19
-        and p("twen thir fo"+R,"ty")[n%C//10-2]+Z[n%10]or Z[n%C])+S[0]*(n%M>0)
+w=lambda n:_(n, ["","thousand "] + p("m b tr quadr quint","illion"))[:-1] or "zero"
+
+_=lambda n,S:n * "x" and _(n//M,S[1:]) + (Z[n%M//C]+"hundred ") * (n%M//C>0) + ((n>C and (not(n%C==0)))*"and ") + (n%C>19 and p("twen thir fo"+R,"ty")[n%C//10-2]+Z[n%10]or Z[n%C])+S[0]*(n%M>0)
 p=lambda a,b="":[i+b+" "for i in a.split()]
 R="r fif six seven eigh nine"
 M=1000
@@ -25,8 +25,11 @@ Z=[""]+p("one two three four five%st nine ten eleven twelve"%R[5:20])+p(
         "thir fou"+R,"teen")
 
 string = ''
+
 for i in range(1, 1001):
-    string += w(i)
+    textNumber = w(i)
+    print textNumber
+    string += textNumber
 
 string = string.replace(" ", "")
 
