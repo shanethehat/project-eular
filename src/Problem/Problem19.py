@@ -25,8 +25,6 @@ days = [1]
 totalDays = 0
 validSundays = 0
 
-startDay = 6 # Mon-Sun == 0-7, 1st january 1901 was a Tuesday
-
 def isLeapYear(year):
     if year % 100 == 0:
         return year % 400 == 0
@@ -36,8 +34,11 @@ def getMonthLength(month, year):
     length = monthLengths[month]
     if month > 0 and isLeapYear(year):
         length += 1
-    print(month, year, length)
     return length
+
+daysIn1900 = 366 if isLeapYear(1900) else 365
+startDay = daysIn1900 % 7
+print(startDay)
 
 for y in range(1901, 2001):
     for i in range(12):
@@ -49,6 +50,7 @@ for y in range(1901, 2001):
 for d in range(startDay, totalDays, 7):
     if d in days:
         validSundays += 1
-print len(days)
+
+print totalDays
 print validSundays
 
