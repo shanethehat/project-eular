@@ -29,8 +29,8 @@ for n in range (1, 10000):
     a = getDivisorsSum(n)
     b = getDivisorsSum(a)
     #print(n, a, b)
-    if (n == b):
-        print(n)
+    if (n == b and n != a):
+        print(n, a)
         amicableTotal += n
 
 print(amicableTotal)
