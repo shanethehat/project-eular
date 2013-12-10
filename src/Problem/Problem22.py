@@ -1,7 +1,7 @@
 #!/usr/bin/python
 
 """
-    Project Eular - Problem 19
+    Project Eular - Problem 22
   
     
 

@@ -1,7 +1,7 @@
 #!/usr/bin/python
 
 """
-    Project Eular - Problem 19
+    Project Eular - Problem 20
    
     n! means n x (n - 1) x ... x 3 x 2 x 1
 
