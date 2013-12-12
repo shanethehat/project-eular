@@ -24,26 +24,22 @@
     @author Shane Auckland <shane.auckland@gmail.con>
 """
 
-def findRecurringCycle(num):
-    print num
-    decPart = str(num).split('.')[1]
-    if len(decPart) < 2:
-        return 0
-    return findRecursiveRecurringCycle(decPart[0], decPart[1:])
-
-def findRecursiveRecurringCycle(char, string):
-    if len(string) == 0:
-        return 0
-    pos = string.find(char)
-    if pos >= 0:
-        return pos+1
-    return findRecursiveRecurringCycle(string[0], string[1:])
-
 largestCycle = 0
+largestD = 0
 
 for d in range(2, 1000):
-    cycle = findRecurringCycle(1.0/d)
-    if cycle > largestCycle:
-        largestCycle = cycle
+    digits = []
+    work = True
+    mod = 10
+    while work:        
+        mod = (mod % d) * 10
+        if mod == 0 or mod in digits:
+            work = False
+        digits.append(mod)
+    print digits
+    if len(digits) > largestCycle:
+        largestCycle = len(digits)
+        largestD = d
 
 print largestCycle
+print largestD
