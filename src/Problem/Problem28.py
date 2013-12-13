@@ -19,4 +19,29 @@
     @author Shane Auckland <shane.auckland@gmail.con>
 """
 
+"""
+   n = number of cells from center point, 0 = center, 1 = first ring etc
+   a = direction of travel:
+       2 = bottom right
+       4 = bottom left
+       6 = top left
+       8 = top right
+"""
+def getAdderValue(n, a):
+    return (8 * (n - 1)) + a
 
+total = 1
+lastValues = {
+    2: 1,
+    4: 1,
+    6: 1,
+    8: 1
+}
+
+for n in range(1, 501):
+    for a in lastValues:
+        adder = getAdderValue(n, a)
+        lastValues[a] += adder
+        total += lastValues[a]
+
+print total
