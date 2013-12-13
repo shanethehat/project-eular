@@ -1,7 +1,7 @@
 #!/usr/bin/python
 
 """
-    Project Eular - Problem 28
+    Project Eular - Problem 29
 
     Consider all integer combinations of a^b for 2 <= a <= 5 and 2 <= b <= 5:
 
