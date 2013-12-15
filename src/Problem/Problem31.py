@@ -15,14 +15,15 @@
     @author Shane Auckland <shane.auckland@gmail.con>
 """
 
-total = 0;
+coins = [200, 100, 50, 20, 10, 5, 2]
 
-for a in range(200, -1, -200):
-    for b in range(a, -1, -100):
-        for c in range(b, -1, -50):
-            for d in range(c, -1, -20):
-                for e in range(d, -1, -10):
-                    for f in range(e, -1, -5):
-                        for g in range(f, -1, -2):
-                            total += 1
-print total
+def findTotal(i, l):
+    if i == len(coins):
+        return 1
+    subTotal = 0
+    for n in range(l, -1, -coins[i]):
+        subTotal += findTotal(i+1, n)
+    return subTotal
+#
+print findTotal(0, coins[0])
+
